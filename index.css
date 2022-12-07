@@ -1,0 +1,44 @@
+.navbar-brand {
+    margin-left: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0 0 50px;
+}
+
+.testafvikling-gif {
+    border: 1px solid #a29a9a;
+    border-radius: 5px;
+}
+
+.flex-container-row {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    max-width: fit-content;
+}
+
+.gray-background {
+    background-color: #dcd1d1;
+    border-radius: 20px;
+}
+
+.flex-container-btn {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    max-width: fit-content;
+    gap: 5px;
+}
+
+button  {
+    max-width: fit-content;
+}
+
+.flex-container-testafvikler {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
