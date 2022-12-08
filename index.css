@@ -8,9 +8,13 @@
     margin: 25px 0 0 50px;
 }
 
-.testafvikling-gif {
+#testafvikling-gif {
     border: 1px solid #a29a9a;
     border-radius: 5px;
+}
+
+.hide {
+    display: none;
 }
 
 .flex-container-row {
@@ -18,11 +22,17 @@
     flex-direction: row;
     padding: 10px;
     max-width: fit-content;
+    min-height: 125px;
+    min-width: 200px;
 }
 
 .gray-background {
     background-color: #dcd1d1;
     border-radius: 20px;
+}
+
+#clock {
+    margin: auto;
 }
 
 .flex-container-btn {
@@ -41,4 +51,8 @@ button  {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+main {
+    margin: 50px;
 }
