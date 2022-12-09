@@ -56,3 +56,7 @@ button  {
 main {
     margin: 50px;
 }
+
+.system-reg-tid:not(:first-child) {
+    margin-top: 5px;
+}

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <title>Klienttid</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link href="index.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="https://static.thenounproject.com/png/4620527-200.png">
-  <script src="stopwatch.js"></script>
+  <script src="stopwatch.js" defer></script>
 </head>
 <body>
 
@@ -18,7 +18,7 @@
         <a class="nav-link active">Sessionstorage</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">JS variabler</a>
+        <a class="nav-link" href="timeVariable.html">JS variabler</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Styresystemets ur</a>
@@ -43,7 +43,7 @@
     <div class="flex-container-testafvikler">
     <div class="flex-container-row gray-background">
     <img id="testafvikling-gif" class="hide" src="https://i.pinimg.com/originals/cf/51/ad/cf51ad748537f4ea6899ab44388ad110.gif" width="125px" height="125px"/>
-      <p id="clock"><span id="seconds">00</span></p>
+      <p id="clock"><span id="seconds"></span></p>
     </div>
     <div class="flex-container-btn">
       <button id="button-start" class="btn btn-primary" type="button">Start test</button>
@@ -52,7 +52,8 @@
     </div>
     </div>
 
-    <div class="system-reg-tid"><span>Systemregistreret tid: </span> <span id="tid-input">Afventer test</span></div>
+    <div class="system-reg-tid"><span>Systemregistreret forbrugt tid: </span> <span id="tid-input">Afventer test</span></div>
+    <div class="system-reg-tid"><span>Systemregistreret starttid: </span> <span id="start-tid-input"></span></div>
 
   </div>
 </main>
