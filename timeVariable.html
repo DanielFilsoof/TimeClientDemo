@@ -6,6 +6,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link href="index.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="https://static.thenounproject.com/png/4620527-200.png">
+  <script src="stopwatch.js"></script>
 </head>
 <body>
 
@@ -28,12 +29,37 @@
     </ul>
   </div>
 </nav>
+
 <main>
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-<!--      TODO-->
+  <div class="flex-container">
+    <h1>Manipulere tid via variable sat i systemet</h1>
+    <p class="lead">I den gamle ordblindetest blev tid primært gemt på denne måde</p>
+    <p class="lead">Her blev tid gemt i variabler i systemets klient som timestamps og trukket fra hinanden for at finde den forbrugte tid</p>
+    <p class="lead"></p>
+    <h2>Instruktioner</h2>
+    <p>Start testen og følg med i den reele tid.</p>
+    <p>Ændre startTidMil variablen lige efter den er blevet sat af javascript i stopwatch.js</p>
+    <p>Observer da, hvor nemt tiden kan ændres af brugeren</p>
+
+    <h3>Testafvikler</h3>
+    <div class="flex-container-testafvikler">
+      <div class="flex-container-row gray-background">
+        <img id="testafvikling-gif" class="hide" src="https://i.pinimg.com/originals/cf/51/ad/cf51ad748537f4ea6899ab44388ad110.gif" width="125px" height="125px"/>
+        <p id="clock"><span id="seconds"></span></p>
+      </div>
+      <div class="flex-container-btn">
+        <button id="button-start" class="btn btn-primary" type="button">Start test</button>
+        <button id="button-stop" class="btn btn-danger" type="button">Afslut test</button>
+        <button id="button-reset" class="btn btn-warning" type="button">Nulstil</button>
+      </div>
     </div>
+
+    <div class="system-reg-tid"><span>Systemregistreret forbrugt tid: </span> <span id="tid-input-variabel">Afventer test</span></div>
+    <div class="system-reg-tid"><span>Systemregistreret starttid: </span> <span id="start-tid-input-variabel"></span></div>
+    <div class="system-reg-tid"><span>Systemregistreret sluttid: </span> <span id="slut-tid-input-variabel"></span></div>
+
   </div>
 </main>
+
 </body>
 </html>

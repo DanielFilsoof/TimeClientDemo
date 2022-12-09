@@ -4,8 +4,18 @@ window.onload = function () {
     var intervalId;
     var startTime;
     var elapsedTime;
+
+    // sessionstorage eksempel
     var systemUdregnetTid = document.getElementById('tid-input');
     var systemUdregnetStartTid = document.getElementById('start-tid-input');
+    var systemUdregnetSlutTid = document.getElementById('slut-tid-input');
+
+    // js variabel eksempel
+    var variabelTidStart;
+    var variabelTidDom = document.getElementById('tid-input-variabel');
+    var variabelTidStartDom = document.getElementById('start-tid-input-variabel');
+    var variabelTidSlutDom = document.getElementById('slut-tid-input-variabel');
+
     var buttonStart = document.getElementById('button-start');
     var buttonStop = document.getElementById('button-stop');
     var buttonReset = document.getElementById('button-reset');
@@ -15,15 +25,21 @@ window.onload = function () {
         buttonStop.classList.remove('disabled');
         buttonStart.classList.add('disabled');
         buttonReset.classList.add('disabled');
-        systemUdregnetTid.innerHTML = "Test under afvikling";
+        if (systemUdregnetTid != null) systemUdregnetTid.innerHTML = "Test under afvikling";
 
         startTime = Date.now(); // get the current time
         elapsedTime = 0;
         intervalId = setInterval(updateTime, 1000); // update the time every second
         appendSeconds.innerHTML = 0 + " sekunder";
         const startTid = new Date();
+
+        // sessionstorage
         window.sessionStorage.setItem('start-tid', startTid);
-        systemUdregnetStartTid.innerHTML = startTid;
+        if (systemUdregnetTid != null) systemUdregnetStartTid.innerHTML = startTid;
+
+        // variabeleksempel
+        variabelTidStart = startTid;
+        variabelTidStartDom.innerHTML = startTid;
     }
 
     function updateTime() {
@@ -41,12 +57,26 @@ window.onload = function () {
         buttonStart.classList.add('disabled');
         buttonReset.classList.remove('disabled');
 
-        const startTidTimestamp = window.sessionStorage.getItem('start-tid');
-        const startTidMil = new Date(startTidTimestamp).getTime();
-        const slutTidMil = new Date().getTime()
-        const totalTid = slutTidMil - startTidMil;
-        systemUdregnetTid.innerHTML = totalTid / 1000;
-        systemUdregnetStartTid.innerHTML = '';
+        // sessionstorageeksempel
+        if (systemUdregnetTid != null) {
+            const startTidTimestamp = window.sessionStorage.getItem('start-tid');
+            const startTidMil = new Date(startTidTimestamp).getTime();
+            const slutTidMil = new Date().getTime()
+            const totalTid = slutTidMil - startTidMil;
+            systemUdregnetTid.innerHTML = totalTid / 1000;
+            systemUdregnetSlutTid.innerHTML = new Date();
+        }
+
+        // variabeleksempel
+        if (variabelTidStartDom != null) {
+            const startTidTimestamp = variabelTidStart
+            const startTidMil = new Date(startTidTimestamp).getTime();
+            const slutTidMil = new Date().getTime();
+            const totalTid = slutTidMil - startTidMil;
+
+            variabelTidDom.innerHTML = totalTid / 1000;
+            variabelTidSlutDom.innerHTML = new Date();
+        }
     }
 
 
@@ -56,6 +86,10 @@ window.onload = function () {
         appendSeconds.innerHTML = elapsedTime;
         buttonStop.classList.add('disabled');
         appendSeconds.innerHTML = 0 + " sekunder";
-        systemUdregnetTid.innerHTML = "Afventer testafvikling";
+
+        if (systemUdregnetTid != null) {
+            systemUdregnetTid.innerHTML = "Afventer testafvikling";
+            systemUdregnetSlutTid.innerHTML = '';
+        }
     }
 }
